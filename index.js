@@ -5,43 +5,47 @@ for(var i=0;i<drumItems;i++)
 
   // alert(`Hey ${i}`);
   document.querySelectorAll('.drum')[i].addEventListener('click', function(){
-    if(this.innerHTML == 'w')
-    {
-      
-      var audio = new Audio('/sounds/tom-1.mp3');
-      audio.play();
-    }
+  var mousePoint = this.innerHTML;
 
-    else if (this.innerHTML == 'a') {
-      var audio = new Audio('/sounds/tom-2.mp3');
-      audio.play();
-    }
+  switch (mousePoint) {
+    case "w":
+            var audio = new Audio('/sounds/tom-1.mp3');
+            audio.play();
+            break;
 
-    else if (this.innerHTML == 's') {
-      var audio = new Audio('/sounds/tom-3.mp3');
-      audio.play();
-    }
+    case "a":
+            var audio = new Audio('/sounds/tom-2.mp3');
+            audio.play();
+            break;
 
-    else if (this.innerHTML == 'd') {
-      var audio = new Audio('/sounds/tom-4.mp3');
-      audio.play();
-    }
+    case "s":
+            var audio = new Audio('/sounds/tom-3.mp3');
+            audio.play();
+            break;
 
-    else if (this.innerHTML == 'j') {
-      var audio = new Audio('/sounds/kick-bass.mp3');
-      audio.play();
-    }
+    case "d":
+            var audio = new Audio('/sounds/tom-4.mp3');
+            audio.play();
+            break;
 
-    else if (this.innerHTML == 'k') {
-      var audio = new Audio('/sounds/snare.mp3');
-      audio.play();
-    }
+    case "j":
+            var audio = new Audio('/sounds/kick-bass.mp3');
+            audio.play();
+              break;
 
-    else if (this.innerHTML == 'l') {
-      var audio = new Audio('/sounds/crash.mp3');
-      audio.play();
-    }
+    case "k":
+            var audio = new Audio('/sounds/snare.mp3');
+            audio.play();
+            break;
+   case "l":
+            var audio = new Audio('/sounds/crash.mp3');
+            audio.play();
+            break;
 
+    default:
+      break;
+
+  }
 
 
 
@@ -52,22 +56,56 @@ for(var i=0;i<drumItems;i++)
   });
 
 
-  document.addEventListener('keyup',function(event)
+  document.addEventListener('keydown',function(event)
 {
-  if(event.keyCode == 87)
-  {
-    var audio = new Audio('/sounds/tom-1.mp3');
-    audio.play();
-  }
 
-else if (event.keyCode== 65) {
-  // var audio = new Audio('/sounds/tom-2.mp3');
-  // audio.play();
-  var count=0;
-  count++;
-  console.log(count)
+var keyPressed = event.key;
+switch (keyPressed) {
+  case 'w':
+  var audio = new Audio('/sounds/tom-1.mp3');
+  audio.play();
+  break;
+
+
+  case 's':
+  var audio = new Audio('/sounds/tom-2.mp3');
+  audio.play();
+  break;
+
+  case 'a':
+  var audio = new Audio('/sounds/tom-3.mp3');
+  audio.play();
+  break;
+
+  case 'd':
+  var audio = new Audio('/sounds/tom-4.mp3');
+  audio.play();
+  break;
+
+  case 'j':
+  var audio = new Audio('/sounds/kick-bass.mp3');
+  audio.play();
+  break;
+
+  case 'k':
+  var audio = new Audio('/sounds/snare.mp3');
+  audio.play();
+  break;
+
+  case 'l':
+  var audio = new Audio('/sounds/crash.mp3');
+  audio.play();
+  break;
+
+  default:
 
 }
+
+
+
+
+
+
 
 })
 
